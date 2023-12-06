@@ -2,6 +2,7 @@ package com.example.springscuritybasic.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class FilmController {
     //影片详情
     @GetMapping("/detail/{type}/{path}")
-    public String detail(){
-        return "detail";
+    public String detail(@PathVariable ("type")String type,@PathVariable("path")String path){
+        return "detail/"+type+"/"+path;
     }
  @GetMapping("/")
     public String index(){
