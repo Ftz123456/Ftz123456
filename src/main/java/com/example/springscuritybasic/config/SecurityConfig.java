@@ -51,9 +51,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .usernameParameter("username").passwordParameter("password")
                 //设置登录成功跳转页面
-                .successForwardUrl("/")
                 .defaultSuccessUrl("/")
                 .failureUrl("/login?error");
+        http.logout().logoutUrl("/logout").logoutSuccessUrl("/login");
 
     }
 

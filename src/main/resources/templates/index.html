@@ -12,7 +12,7 @@
 <div sec:authorize="isAuthenticated()">
 	<h2 align="center"><span sec:authentication="name" style="color: #007bff"></span>您好，您的用户权限为
         <span sec:authentication="principal.authorities" style="color:darkkhaki"></span>，您有权观看以下电影</h2>
-	<form th:action="@{/mylogout}" method="post">
+	<form th:action="@{/logout}" method="post">
 		<input th:type="submit" th:value="注销" />
 	</form>
 </div>
